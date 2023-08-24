@@ -30,3 +30,47 @@ Questo richiederá un minimo di ricerca per capire come usare il parametro e den
 
 
 */
+
+//TODO Chiedere nome e cognome
+
+// Prendo i km scritti dall'utente sull'input
+
+
+
+// Prendo la fascia d'età selezionata dall'utente
+
+
+
+// Metto le costanti riguardanti lo sconto per fascia d'età e il prezzo/km
+
+const teenagerDiscount = Number(0.80);
+const adultDiscount = Number(0.60);
+const perKmPrice = Number(0.21);
+
+let totalPrice
+let fixedPrice
+
+// Aggiungo eventListener al pulsante in modo da poter prendere le informazioni digitate dall'utente e poter invocare la funzione di calcolo del prezzo
+
+const submit = document.getElementById("submit");
+
+submit.addEventListener('click',
+
+function() {
+
+    let kilometers = document.getElementById("kilometers").value;
+    console.log(kilometers);
+    let userAge = document.getElementById("userAge").value;
+    console.log(userAge);
+
+    if (userAge === teenager) {
+        totalPrice = kilometers * perKmPrice * teenagerDiscount;
+    } else if (userAge === over65) {
+        totalPrice = kilometers * perKmPrice * adultDiscount;
+    } else {
+        totalPrice = kilometers * perKmPrice;
+    }
+    console.log(totalPrice);
+}
+)
+
