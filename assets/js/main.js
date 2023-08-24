@@ -49,6 +49,7 @@ const perKmPrice = Number(0.21);
 
 let totalPrice
 let fixedPrice
+let offer
 
 // Aggiungo eventListener al pulsante in modo da poter prendere le informazioni digitate dall'utente e poter invocare la funzione di calcolo del prezzo
 
@@ -57,20 +58,33 @@ const submit = document.querySelector(".submit");
 submit.addEventListener('click',
 
 function() {
-
     let kilometers = Number(document.getElementById("kilometers").value);
     console.log(kilometers);
     let userAge = Number(document.getElementById("age").value);
     console.log(userAge);
+    let userName = document.getElementById("userName").value;
+    console.log(userName);
 
     if (userAge === 0.8) {
         totalPrice = kilometers * perKmPrice * teenagerDiscount;
+        offer = 'Biglietto minorenne'
     } else if (userAge === 0.6) {
         totalPrice = kilometers * perKmPrice * adultDiscount;
+        offer = 'Biglietto over 65'
     } else {
         totalPrice = kilometers * perKmPrice;
+        offer= 'Biglietto standard'
     }
     console.log(totalPrice);
+
+    fixedPrice = totalPrice.toFixed(2)
+
+
+    document.getElementById("printedUser").innerHTML = userName;
+    document.getElementById("ticket_type").innerHTML = offer;
+    document.getElementById("cab").innerHTML = Math.floor(Math.random() * 20) + 1;
+    document.getElementById("code").innerHTML = Math.floor(Math.random() * 999998) + 1;
+    document.getElementById("price").innerHTML = fixedPrice + "€";
 }
 )
 
