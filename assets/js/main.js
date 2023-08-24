@@ -58,14 +58,14 @@ submit.addEventListener('click',
 
 function() {
 
-    let kilometers = document.getElementById("kilometers").value;
+    let kilometers = Number(document.getElementById("kilometers").value);
     console.log(kilometers);
-    let userAge = document.getElementById("userAge").value;
+    let userAge = Number(document.getElementById("age").value);
     console.log(userAge);
 
-    if (userAge === teenager) {
+    if (userAge === 0.8) {
         totalPrice = kilometers * perKmPrice * teenagerDiscount;
-    } else if (userAge === over65) {
+    } else if (userAge === 0.6) {
         totalPrice = kilometers * perKmPrice * adultDiscount;
     } else {
         totalPrice = kilometers * perKmPrice;
