@@ -52,7 +52,7 @@ let fixedPrice
 
 // Aggiungo eventListener al pulsante in modo da poter prendere le informazioni digitate dall'utente e poter invocare la funzione di calcolo del prezzo
 
-const submit = document.getElementById("submit");
+const submit = document.querySelector(".submit");
 
 submit.addEventListener('click',
 
